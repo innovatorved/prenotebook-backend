@@ -83,7 +83,7 @@ router.put("/updatenote/:id" , fetchUserDetails , async(req , res) => {
         if(title){updateDetails.title = title};
         if(description){updateDetails.description = description};
         if(tag){updateDetails.tag = tag};
-        if(share){updateDetails.share = share};
+        updateDetails.share = share;
         // console.log(updateDetails);
         // Update the note using Notes Schema
         UpdateNote1 = await Notes.findByIdAndUpdate(RecNoteId , {$set : updateDetails} , {new:true});
